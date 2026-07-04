@@ -23,7 +23,7 @@ export default function LeaderboardPage({ user }) {
   // Fetch compiled tests list
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:5000/api/leaderboard/completed-tests/list', {
+    fetch('https://campusbit-909i.onrender.com/api/leaderboard/completed-tests/list', {
       headers: { 'Authorization': `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -45,7 +45,7 @@ export default function LeaderboardPage({ user }) {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch(`http://localhost:5000/api/leaderboard/${selectedTestId}?branch=${activeBranch}`, {
+      const response = await fetch(`https://campusbit-909i.onrender.com/api/leaderboard/${selectedTestId}?branch=${activeBranch}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) throw new Error('Failed to load leaderboard data');
@@ -73,7 +73,7 @@ export default function LeaderboardPage({ user }) {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch(`http://localhost:5000/api/leaderboard/${selectedTestId}/search?rollNo=${searchRollNo.trim()}`, {
+      const response = await fetch(`https://campusbit-909i.onrender.com/api/leaderboard/${selectedTestId}/search?rollNo=${searchRollNo.trim()}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -93,7 +93,7 @@ export default function LeaderboardPage({ user }) {
   const handleTogglePrivacy = async (checked) => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://localhost:5000/api/auth/privacy', {
+      const response = await fetch('https://campusbit-909i.onrender.com/api/auth/privacy', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

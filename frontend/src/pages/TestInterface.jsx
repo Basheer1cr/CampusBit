@@ -27,7 +27,7 @@ export default function TestInterface({ user }) {
   const loadTest = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:5000/api/tests/${testId}/start`, {
+      const response = await fetch(`https://campusbit-909i.onrender.com/api/tests/${testId}/start`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -91,7 +91,7 @@ export default function TestInterface({ user }) {
   const saveAnswersToServer = async () => {
     const token = localStorage.getItem('token');
     try {
-      await fetch(`http://localhost:5000/api/tests/${testId}/save`, {
+      await fetch(`https://campusbit-909i.onrender.com/api/tests/${testId}/save`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export default function TestInterface({ user }) {
     if (submitting || disqualified) return;
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:5000/api/tests/${testId}/tab-switch`, {
+      const response = await fetch(`https://campusbit-909i.onrender.com/api/tests/${testId}/tab-switch`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -197,7 +197,7 @@ export default function TestInterface({ user }) {
     setSubmitting(true);
     const token = localStorage.getItem('token');
     try {
-      await fetch(`http://localhost:5000/api/tests/${testId}/submit`, {
+      await fetch(`https://campusbit-909i.onrender.com/api/tests/${testId}/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -218,7 +218,7 @@ export default function TestInterface({ user }) {
     setSubmitting(true);
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:5000/api/tests/${testId}/submit`, {
+      const response = await fetch(`https://campusbit-909i.onrender.com/api/tests/${testId}/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

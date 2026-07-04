@@ -11,7 +11,7 @@ export default function TestList() {
   const fetchTests = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://localhost:5000/api/tests', {
+      const response = await fetch('https://campusbit-909i.onrender.com/api/tests', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) throw new Error('Failed to load tests');
